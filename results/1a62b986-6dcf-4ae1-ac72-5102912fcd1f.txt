@@ -1,2 +1,0 @@
-[rfc1.txt]:   The links have the following primitive characteristics.  They are
-[rfc7.txt]:   the other for extracting.  They are respectively updated by the

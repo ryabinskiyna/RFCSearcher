@@ -85,7 +85,7 @@ public class FrontServlet extends HttpServlet {
                 resp.setContentType("APPLICATION/OCTET-STREAM");
                 resp.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");
 //                java.io.FileInputStream fileInputStream=new java.io.FileInputStream(resultsPath + "\\" + filename);
-                java.io.FileInputStream fileInputStream=new java.io.FileInputStream(resultsPath + "//" + filename);
+                java.io.FileInputStream fileInputStream=new java.io.FileInputStream(resultsPath + "/" + filename);
                 ServletOutputStream out = resp.getOutputStream();
                 int i;
                 while ((i=fileInputStream.read()) != -1) {

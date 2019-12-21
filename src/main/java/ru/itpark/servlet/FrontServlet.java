@@ -112,8 +112,8 @@ public class FrontServlet extends HttpServlet {
                     for (Part filePart : fileParts) {
                         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
                         InputStream fileContent = filePart.getInputStream();
-                        Path up = Paths.get(uploadPath.toString() + "\\" + fileName);
-
+//                        Path up = Paths.get(uploadPath.toString() + "\\" + fileName);
+                        Path up = Paths.get(uploadPath.toString() + "//" + fileName);
                         File targetFile = new File(up.toString());
 
                         Files.copy(

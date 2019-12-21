@@ -48,7 +48,8 @@ public class QuerySearch {
 
                     for (String line : list) {
                         if (line.contains(query))
-                            result.append("[" + file.getName() + "]:" + line + System.lineSeparator());
+//                            result.append("[" + file.getName() + "]:" + line + System.lineSeparator());
+                        result.append("[").append(file.getName()).append("]:").append(line).append(System.lineSeparator());
                     }
 
                     try (BufferedWriter writer = new BufferedWriter(new FileWriter(outfile, true))) {

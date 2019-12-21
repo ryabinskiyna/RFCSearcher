@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.sql.DataSource;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -84,8 +85,8 @@ public class FrontServlet extends HttpServlet {
                 String filename = downloadId + ".txt";
                 resp.setContentType("APPLICATION/OCTET-STREAM");
                 resp.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");
-//                java.io.FileInputStream fileInputStream=new java.io.FileInputStream(resultsPath + "\\" + filename);
-                java.io.FileInputStream fileInputStream=new java.io.FileInputStream(resultsPath + "/" + filename);
+                FileInputStream fileInputStream=new FileInputStream(resultsPath + "\\" + filename);
+//                FileInputStream fileInputStream=new FileInputStream(resultsPath + "/" + filename);
                 ServletOutputStream out = resp.getOutputStream();
                 int i;
                 while ((i=fileInputStream.read()) != -1) {
